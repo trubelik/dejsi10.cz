@@ -50,5 +50,8 @@ export default {
         autoprefixer: {},
       },
     },
+  },
+  generate: {
+    dir: 'public'
   }
 }
