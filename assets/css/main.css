@@ -1,3 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply w-full font-normal;
+  background-color: rgb(244, 233, 215);
+}
+
+b, strong {
+  @apply font-semibold;
+}
+
+.limit-words {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.blog-body ol {
+  @apply list-decimal mx-10;
+}
+
+.blog-body ul {
+  @apply list-disc mx-10;
+}
+
+.blog-body li {
+  @apply mb-4;
+}
+
+.blog-body > * {
+  @apply my-7;
+}
+
+.blog-body img {
+  @apply rounded-lg;
+}
+
+.blog-body iframe {
+  @apply mx-auto;
+}

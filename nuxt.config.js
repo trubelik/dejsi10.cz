@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'dejsi10.cz',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'cs_CZ'
     },
     meta: [
       { charset: 'utf-8' },
@@ -26,6 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/hygraph.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,7 +36,10 @@ export default {
   buildModules: [
     '@nuxt/postcss8',
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    ['@nuxtjs/eslint-module', {
+      fix: true
+    }],
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -50,5 +54,19 @@ export default {
         autoprefixer: {},
       },
     },
+  },
+
+  // Fontawesome
+  fontawesome: {
+    icons: {
+      solid: [
+        'faCalendarWeek',
+        'faPencil',
+        'faChevronRight',
+        'faTree',
+        'faHouse',
+        'faDownload'
+      ]
+    }
   }
 }
