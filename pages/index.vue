@@ -7,12 +7,12 @@
             Všechny tábory
           </h1>
           <p class="text-lg text-slate-700">
-            Přečtěte si o nadcházejích i minulých táborech
+            Přečtěte si o nadcházejících i minulých táborech
           </p>
         </div>
         <div class="space-y-8 lg:divide-y lg:divide-gray-100">
-          <div v-for="article in articles" :key="article.slug" class="mb-8 p-7 sm:flex lg:items-start group bg-white rounded-2xl">
-            <div class="flex-shrink-0 mb-7 sm:mb-0 sm:mr-7">
+          <div v-for="article in articles" :key="article.slug" class="mb-8 p-7 lg:flex lg:items-start group bg-white rounded-2xl">
+            <div class="flex-shrink-0 mb-7 lg:mb-0 lg:mr-7 max-w-full">
               <img class="w-full rounded-md h-32 lg:w-32 object-cover" :src="article.hero.url" alt="text">
             </div>
             <div>
@@ -24,20 +24,20 @@
               <p class="mt-2 text-base text-gray-700 limit-words">
                 {{ article.shortDescription }}
               </p>
-              <div class="mt-5 flex items-center justify-center">
+              <div class="mt-5 sm:flex items-center justify-center">
                 <div class="mr-auto">
                   <ClientOnly>
-                    <Tag>
+                    <Tag class="mb-2 sm:mb-0">
                       <font-awesome-icon icon="pencil" class="mr-2" />
                       {{ new Date(article.createdAt).toLocaleDateString('cs-CZ') }}
                     </Tag>
-                    <Tag variant="warning">
+                    <Tag variant="warning" class="mb-4 sm:mb-0">
                       <font-awesome-icon icon="calendar-week" class="mr-2" />
                       {{ new Date(article.begins).toLocaleDateString('cs-CZ') }} - {{ new Date(article.ends).toLocaleDateString('cs-CZ') }}
                     </Tag>
                   </ClientOnly>
                 </div>
-                <div class="self-end">
+                <div class="self-end text-right">
                   <Button :to="'/blog/' + article.slug" class="self-end">
                     Číst více
                     <font-awesome-icon icon="chevron-right" class="ml-1" />

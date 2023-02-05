@@ -1,6 +1,6 @@
 <template>
   <Body>
-    <div class="py-5 flex">
+    <div class="py-5 px-2 flex">
       <NuxtLink to="/" class="text-xl font-bold">
         Dejsi10
       </NuxtLink>
