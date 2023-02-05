@@ -60,7 +60,7 @@ export default {
     const { articles } = await $hygraph.request(
       gql`
         {
-          articles(orderBy: begins_ASC) {
+          articles(orderBy: begins_DESC) {
             slug
             title
             shortDescription
