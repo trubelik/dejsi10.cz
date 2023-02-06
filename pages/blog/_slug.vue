@@ -15,7 +15,13 @@
           </p>
         </div>
         <div class="md:flex-shrink-0 w-10/12 sm:w-7/12 m-auto md:w-5/12 p-7 md:p-0">
-          <img class="w-full rounded-2xl object-cover" :src="article.hero.url" alt="text">
+          <nuxt-img
+            :src="article.hero.url"
+            class="w-full rounded-2xl object-cover"
+            sizes="sm:450px"
+            format="webp"
+            quality="100"
+          />
         </div>
       </div>
       <div class="mb-4 flex">

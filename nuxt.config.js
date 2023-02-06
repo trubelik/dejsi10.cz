@@ -41,7 +41,8 @@ export default {
     ['@nuxtjs/eslint-module', {
       fix: true
     }],
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    '@nuxt/image'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -70,5 +71,10 @@ export default {
         'faDownload'
       ]
     }
+  },
+
+  // TODO - should add alias, but it seems not working
+  image: {
+    domains: ['media.graphassets.com']
   }
 }

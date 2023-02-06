@@ -13,7 +13,13 @@
         <div class="space-y-8 lg:divide-y lg:divide-gray-100">
           <div v-for="article in articles" :key="article.slug" class="mb-8 p-7 lg:flex lg:items-start group bg-white rounded-2xl">
             <div class="flex-shrink-0 mb-7 lg:mb-0 lg:mr-7 max-w-full">
-              <img class="w-full rounded-md h-32 lg:w-32 object-cover" :src="article.hero.url" alt="text">
+              <nuxt-img
+                :src="article.hero.url"
+                class="w-full rounded-md h-32 lg:w-32 object-cover"
+                sizes="sm:450px"
+                format="webp"
+                quality="100"
+              />
             </div>
             <div>
               <p class="leading-6 tracking-tight">

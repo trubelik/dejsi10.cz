@@ -1,6 +1,6 @@
 <template>
   <div v-if="gallery.photos" class="mb-4 px-6 py-4 md:px-10 md:py-6 bg-white rounded-2xl">
-    <h1 class="mb-4 text-3xl sm:text-2xl tracking-tight text-slate-900 font-semibold">
+    <h1 class="mb-4 text-xl sm:text-2xl tracking-tight text-slate-900 font-semibold">
       <template v-if="gallery.article">
         {{ gallery.article.title }}
       </template>
@@ -15,11 +15,15 @@
     />
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-2 items-center content-center">
-      <div
+      <nuxt-img
         v-for="(image, imageIndex) in galleryPhotos"
         :key="imageIndex"
-        class="h-32 w-full bg-cover rounded-xl cursor-pointer"
-        :style="{ backgroundImage: 'url(' + image + ')' }"
+        :src="image"
+        class="h-32 w-full object-cover rounded-xl cursor-pointer"
+        sizes="sm:250px"
+        format="webp"
+        quality="70"
+        loading="lazy"
         @click="index = imageIndex"
       />
     </div>

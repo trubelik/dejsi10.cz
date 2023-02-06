@@ -1,5 +1,5 @@
 <template>
-  <div class="xl:grid xl:grid-cols-3 xl:gap-4 mb-6">
+  <div class="xl:grid xl:grid-cols-3 xl:gap-4 mb-4">
     <div v-for="(download, index) in items" :key="name + '_download_' + index" class="p-3 pr-4 bg-white bg-white rounded-2xl flex mb-4 xl:mb-0">
       <div class="p-2 bg-gray-300 text-gray-600 rounded-md flex items-center h-12 w-12 place-content-center mr-3 shrink-0">
         <font-awesome-icon icon="download" />
