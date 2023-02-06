@@ -30,6 +30,7 @@
       </div>
       <div class="blog-body mb-4 px-6 py-2 md:px-16 md:py-6 bg-white rounded-2xl" v-html="article.body.html" />
       <Downloads :items="article.downloads" />
+      <Gallery v-if="article.photoArchive" :gallery="article.photoArchive" />
     </Body>
   </Layout>
 </template>
@@ -60,6 +61,11 @@ export default {
                 title
                 description
                 file {
+                  url
+                }
+              }
+              photoArchive {
+                photos {
                   url
                 }
               }
