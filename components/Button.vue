@@ -18,6 +18,7 @@ export default {
       classes: {
         'bg-amber-600': true,
         'flex-auto': true,
+        'inline-block': true,
         shadow: true,
         'text-white': true,
         'rounded-md': true,
