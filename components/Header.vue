@@ -5,8 +5,11 @@
         Dejsi10
       </NuxtLink>
       <nav class="ml-auto">
-        <NuxtLink to="/" class="text-md">
+        <NuxtLink to="/">
           Hlavní stránka
+        </NuxtLink>
+        <NuxtLink to="/photos">
+          Fotografie
         </NuxtLink>
       </nav>
     </div>

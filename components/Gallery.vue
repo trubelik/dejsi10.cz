@@ -1,8 +1,8 @@
 <template>
   <div v-if="gallery.photos" class="mb-4 px-6 py-4 md:px-10 md:py-6 bg-white rounded-2xl">
     <h1 class="mb-4 text-xl sm:text-2xl tracking-tight text-slate-900 font-semibold">
-      <template v-if="gallery.article">
-        {{ gallery.article.title }}
+      <template v-if="gallery.description">
+        {{ gallery.description }}
       </template>
       <template v-else>
         Fotogalerie

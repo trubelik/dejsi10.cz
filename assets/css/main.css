@@ -52,3 +52,11 @@ b, strong {
 .blog-body iframe {
   @apply mx-auto;
 }
+
+nav .nuxt-link-exact-active {
+  @apply font-semibold;
+}
+
+nav > * {
+  @apply mx-3;
+}
