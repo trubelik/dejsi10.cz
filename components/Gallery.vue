@@ -9,7 +9,7 @@
       </template>
     </h1>
     <CoolLightBox
-      :items="galleryPhotos"
+      :items="galleryPhotosLight"
       :index="index"
       @close="index = null"
     />
@@ -48,6 +48,17 @@ export default {
     galleryPhotos () {
       return this.gallery.photos.map((image) => {
         return image.url
+      })
+    },
+    galleryPhotosLight () {
+      const vm = this
+
+      return this.gallery.photos.map((image) => {
+        return vm.$img(image.url, {
+          width: 1280,
+          quality: 70,
+          format: 'webp'
+        })
       })
     }
   }
