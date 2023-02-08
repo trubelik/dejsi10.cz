@@ -92,3 +92,29 @@ export default {
   }
 }
 </script>
+
+<style>
+  .blog-body ol {
+    @apply list-decimal mx-10;
+  }
+
+  .blog-body ul {
+    @apply list-disc mx-10;
+  }
+
+  .blog-body li {
+    @apply mb-4;
+  }
+
+  .blog-body > * {
+    @apply my-7;
+  }
+
+  .blog-body img {
+    @apply rounded-lg;
+  }
+
+  .blog-body iframe {
+    @apply mx-auto;
+  }
+</style>

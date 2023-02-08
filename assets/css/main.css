@@ -13,13 +13,6 @@ b, strong {
   @apply font-semibold;
 }
 
-.limit-words {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.2s;
@@ -27,46 +20,4 @@ b, strong {
 .page-enter,
 .page-leave-to {
   opacity: 0;
-}
-
-.blog-body ol {
-  @apply list-decimal mx-10;
-}
-
-.blog-body ul {
-  @apply list-disc mx-10;
-}
-
-.blog-body li {
-  @apply mb-4;
-}
-
-.blog-body > * {
-  @apply my-7;
-}
-
-.blog-body img {
-  @apply rounded-lg;
-}
-
-.blog-body iframe {
-  @apply mx-auto;
-}
-
-nav .main-navigation .nuxt-link-exact-active,
-nav .main-navigation .nuxt-link-active:not(.main-page) {
-  @apply text-white bg-amber-600 font-semibold md:bg-transparent md:text-black;
-}
-
-nav .main-navigation {
-  @apply w-full bg-white md:block md:w-auto flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:bg-transparent;
-}
-
-nav .main-navigation > * {
-  @apply block py-2 pl-3 pr-4 text-gray-700 rounded md:inline-block md:border-0 md:p-0;
-}
-
-nav .main-navigation > *:not(.nuxt-link-active),
-nav .main-navigation > .main-page:not(.nuxt-link-exact-active) {
-  @apply hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700;
 }

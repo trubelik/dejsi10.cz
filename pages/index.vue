@@ -80,3 +80,12 @@ export default {
   }
 }
 </script>
+
+<style>
+  .limit-words {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+</style>
