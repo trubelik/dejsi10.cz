@@ -69,7 +69,8 @@ export default {
         'faTree',
         'faHouse',
         'faDownload',
-        'faBars'
+        'faBars',
+        'faQuoteLeft'
       ]
     }
   },
