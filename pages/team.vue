@@ -14,12 +14,12 @@
         :key="'member_' + index"
         class="bg-white rounded-2xl p-6 md:px-10 md:py-8 mt-40 relative"
       >
-        <div class="-top-40 left-0 w-full absolute">
+        <div class="-top-40 left-0 w-full absolute" style="height: 200px;">
           <nuxt-img
-            class="rounded-xl mx-auto drop-shadow-xl max-w-full"
+            class="rounded-xl mx-auto drop-shadow-xl max-w-full max-h-full"
             :src="teamMember.photo.url"
+            sizes="sm:300px"
             loading="lazy"
-            height="200"
             format="webp"
           />
         </div>
