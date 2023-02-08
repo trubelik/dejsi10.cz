@@ -16,7 +16,7 @@
       >
         <div class="-top-40 left-0 w-full absolute" style="height: 200px;">
           <nuxt-img
-            class="rounded-xl mx-auto drop-shadow-xl max-w-full max-h-full"
+            class="rounded-xl mx-auto shadow-xl max-w-full max-h-full"
             :src="teamMember.photo.url"
             sizes="sm:300px"
             loading="lazy"
