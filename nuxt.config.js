@@ -68,7 +68,8 @@ export default {
         'faChevronRight',
         'faTree',
         'faHouse',
-        'faDownload'
+        'faDownload',
+        'faBars'
       ]
     }
   },
