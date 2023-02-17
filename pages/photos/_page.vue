@@ -8,25 +8,9 @@
         Galerie fotografií z našich táborů
       </p>
     </div>
+    <Pagination class="mb-4" :total="photoArchivesConnection.aggregate.count" :pointer="pointer" link="/photos" />
     <Gallery v-for="(edge, index) in photoArchivesConnection.edges" :key="'gallery_' + index" :gallery="edge.node" />
-    <div class="mb-4 grid grid-cols-2">
-      <div>
-        <Button
-          v-if="photoArchivesConnection.pageInfo.hasPreviousPage"
-          :to="'/photos' + (pointer !== 1 ? '/' + (pointer - 1) : '')"
-        >
-          Předchozí
-        </Button>
-      </div>
-      <div class="text-right">
-        <Button
-          v-if="photoArchivesConnection.pageInfo.hasNextPage"
-          :to="'/photos/' + (pointer + 1)"
-        >
-          Další
-        </Button>
-      </div>
-    </div>
+    <Pagination :total="photoArchivesConnection.aggregate.count" :pointer="pointer" link="/photos" />
   </div>
 </template>
 
@@ -36,8 +20,8 @@ export default {
   name: 'PhotosPage',
   async asyncData ({ $hygraph, params, redirect }) {
     const { page } = params
-    const skip = page ? (page * 5) : 0
-    const pointer = parseInt(page) || 0
+    const pointer = parseInt(page) || 1
+    const skip = pointer !== 1 ? ((pointer - 1) * 5) : 0
     try {
       const { photoArchivesConnection } = await $hygraph.request(
         gql`
@@ -54,6 +38,9 @@ export default {
                     slug
                   }
                 }
+              }
+              aggregate {
+                count
               }
               pageInfo {
                 hasPreviousPage
