@@ -42,7 +42,7 @@
               </ClientOnly>
             </div>
             <div class="self-end text-right">
-              <Button :to="'/blog/' + article.slug" class="self-end">
+              <Button :to="'/blog/' + article.slug" class="self-end" variant="secondary">
                 Číst více
                 <font-awesome-icon icon="chevron-right" class="ml-1" />
               </Button>
