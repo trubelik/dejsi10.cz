@@ -11,16 +11,26 @@ export default {
     to: {
       required: true,
       type: String
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    variant: {
+      type: String,
+      default: 'primary'
+    },
+    active: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
-      classes: {
-        'bg-amber-600': true,
+      base: {
         'flex-auto': true,
         'inline-block': true,
         shadow: true,
-        'text-white': true,
         'rounded-md': true,
         'text-sm': true,
         'border-y': true,
@@ -28,11 +38,34 @@ export default {
         'py-2': true,
         'font-semibold': true,
         'px-3': true,
-        'hover:bg-amber-700': true,
         'focus:outline-none': true,
+        'pointer-events-none': this.disabled,
+        'opacity-50': this.disabled
+      },
+      primary: {
+        'bg-white': true,
+        'text-black': true,
+        'hover:bg-gray-50': true,
+        'focus:ring-sky-400': true,
         'focus:ring-2': true,
-        'focus:ring-offset-2': true,
-        'focus:ring-sky-300': true
+        'bg-gray-100': this.active,
+        'text-gray-400': this.disabled
+      },
+      secondary: {
+        'bg-amber-600': true,
+        'text-white': true,
+        'hover:bg-amber-700': true,
+        'bg-amber-700': this.active,
+        'bg-gray-100': this.disabled,
+        'text-gray-400': this.disabled
+      }
+    }
+  },
+  computed: {
+    classes () {
+      return {
+        ...this.base,
+        ...this[this.variant]
       }
     }
   }
