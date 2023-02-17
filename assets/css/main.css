@@ -6,7 +6,8 @@
 
 body {
   @apply w-full font-normal;
-  background-color: rgb(244, 233, 215);
+  /* background-color: rgb(228, 223, 204); */
+  background-color: rgb(237, 233, 222);
 }
 
 b, strong {
