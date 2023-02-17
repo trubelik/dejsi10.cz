@@ -2,7 +2,7 @@
   <Body>
     <nav class="py-5 px-2 flex flex-wrap items-center justify-between">
       <NuxtLink to="/" class="text-xl font-bold">
-        Dejsi10
+        <div class="logo" />
       </NuxtLink>
       <button type="button" class="inline-flex items-center p-2 text-gray-700 rounded-lg md:hidden hover:bg-gray-100 text-xl" @click="hide = !hide">
         <font-awesome-icon icon="bars" />
@@ -55,5 +55,20 @@ export default {
   nav .main-navigation > *:not(.nuxt-link-active),
   nav .main-navigation > .main-page:not(.nuxt-link-exact-active) {
     @apply hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700;
+  }
+
+  .logo {
+    background-image: url('/dejsi10.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 135px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    .logo {
+      height: 75px;
+      width: 202px;
+    }
   }
 </style>
