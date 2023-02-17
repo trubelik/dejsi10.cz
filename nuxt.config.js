@@ -66,6 +66,7 @@ export default {
         'faCalendarWeek',
         'faPencil',
         'faChevronRight',
+        'faChevronLeft',
         'faTree',
         'faHouse',
         'faDownload',
