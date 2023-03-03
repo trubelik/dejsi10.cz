@@ -14,6 +14,30 @@ b, strong {
   @apply font-semibold;
 }
 
+table tbody tr {
+  @apply border-b border-gray-200;
+}
+
+table tbody tr:last-child {
+  @apply border-b-0;
+}
+
+table tbody tr:hover {
+  @apply bg-gray-100;
+}
+
+table tbody tr td {
+  @apply p-2;
+}
+
+table thead tr {
+  @apply border-b-2 border-gray-200;
+}
+
+table thead tr th {
+  @apply p-2;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.2s;

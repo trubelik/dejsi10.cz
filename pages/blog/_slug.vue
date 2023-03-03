@@ -111,7 +111,7 @@ export default {
   }
 
   .blog-body img {
-    @apply rounded-lg;
+    @apply rounded-lg mx-auto;
   }
 
   .blog-body iframe {
