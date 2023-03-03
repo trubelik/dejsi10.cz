@@ -3,7 +3,7 @@
     <div class="flex gap-1">
       <Button
         :disabled="pointer <= 1"
-        :to="link + '/' + (pointer - 1)"
+        :to="link + '/' + (pointer - 1 !== 1 ? pointer - 1 : '')"
       >
         <font-awesome-icon icon="chevron-left" />
         <span class="sr-only">Předchozí</span>

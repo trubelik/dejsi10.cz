@@ -7,7 +7,7 @@
         </h1>
         <Tag>
           <font-awesome-icon icon="pencil" class="mr-2" />
-          <b class="mr-2">Vytvořeno</b> {{ new Date(article.createdAt).toLocaleDateString('cs-CZ') }}
+          <b class="mr-2">Aktualizováno</b> {{ new Date(article.updatedAt).toLocaleDateString('cs-CZ') }}
         </Tag>
         <p class="mt-6 text-lg text-slate-700">
           {{ article.shortDescription }}
@@ -51,7 +51,7 @@ export default {
           query getArticle($slug: String) {
             article(where: { slug: $slug }) {
               begins
-              createdAt
+              updatedAt
               ends
               title
               hero {

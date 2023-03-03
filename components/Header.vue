@@ -11,6 +11,9 @@
         <NuxtLink to="/" class="main-page">
           Hlavní stránka
         </NuxtLink>
+        <NuxtLink to="/articles">
+          Všechny tábory
+        </NuxtLink>
         <NuxtLink to="/team">
           Táborový tým
         </NuxtLink>
