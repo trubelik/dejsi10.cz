@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <Body>
     <div class="md:flex md:items-center">
       <div class="my-5 md:my-16 text-left mr-7 ml-7 md:mr-16 md:ml-0">
-        <h1 class="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold">
+        <Heading class="mb-4">
           {{ article.title }}
-        </h1>
+        </Heading>
         <Tag>
           <font-awesome-icon icon="pencil" class="mr-2" />
           <b class="mr-2">Aktualizováno</b> {{ new Date(article.updatedAt).toLocaleDateString('cs-CZ') }}
@@ -36,7 +36,7 @@
     <div class="blog-body mb-4 px-6 py-2 md:px-16 md:py-6 bg-white rounded-2xl" v-html="article.body.html" />
     <Downloads :items="article.downloads" />
     <Gallery v-if="article.photoArchive" :gallery="article.photoArchive" />
-  </div>
+  </Body>
 </template>
 
 <script>

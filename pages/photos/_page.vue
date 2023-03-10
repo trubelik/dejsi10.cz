@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <Body>
     <div class="my-16 text-center">
-      <h1 class="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold">
+      <Heading class="mb-4">
         Fotografie
-      </h1>
+      </Heading>
       <p class="text-lg text-slate-700">
         Galerie fotografií z našich táborů
       </p>
@@ -11,7 +11,7 @@
     <Pagination class="mb-4" :total="photoArchivesConnection.aggregate.count" :pointer="pointer" link="/photos" />
     <Gallery v-for="(edge, index) in photoArchivesConnection.edges" :key="'gallery_' + index" :gallery="edge.node" />
     <Pagination :total="photoArchivesConnection.aggregate.count" :pointer="pointer" link="/photos" />
-  </div>
+  </Body>
 </template>
 
 <script>

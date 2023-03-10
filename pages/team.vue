@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <Body>
     <div class="my-16 text-center">
-      <h1 class="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold">
+      <Heading class="mb-4">
         {{ teamPage.title }}
-      </h1>
+      </Heading>
       <p class="text-lg text-slate-700">
         {{ teamPage.description }}
       </p>
@@ -24,9 +24,9 @@
           />
         </div>
         <div class="bg-white rounded-2xl p-6 md:px-10 md:py-8">
-          <h1 class="mt-8 mb-3 text-xl sm:text-2xl tracking-tight text-slate-900 font-extrabold">
+          <Heading variant="small" class="mt-8 mb-3">
             {{ teamMember.name }}
-          </h1>
+          </Heading>
           <p>
             {{ teamMember.description }}
           </p>
@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </Body>
 </template>
 
 <script>
