@@ -37,12 +37,3 @@ table thead tr {
 table thead tr th {
   @apply p-2;
 }
-
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.2s;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
