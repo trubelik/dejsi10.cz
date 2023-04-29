@@ -71,7 +71,8 @@ export default {
         'faHouse',
         'faDownload',
         'faBars',
-        'faQuoteLeft'
+        'faQuoteLeft',
+        'faBookOpenReader',
       ]
     }
   },
