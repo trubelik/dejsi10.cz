@@ -117,4 +117,8 @@ export default {
   .blog-body iframe {
     @apply mx-auto;
   }
+
+  .blog-body a {
+    @apply text-blue-500;
+  }
 </style>
