@@ -23,6 +23,10 @@ export default {
       type: String,
       default: 'primary'
     },
+    size: {
+      type: String,
+      default: 'normal'
+    },
     active: {
       type: Boolean,
       default: false
@@ -61,6 +65,13 @@ export default {
         'bg-amber-700': this.active,
         'bg-gray-100': this.disabled,
         'text-gray-400': this.disabled
+      },
+      normal: {},
+      big: {
+        'text-base': true,
+        'px-5': true,
+        'py-3': true,
+        'font-bold': true
       }
     }
   },
@@ -68,7 +79,8 @@ export default {
     classes () {
       return {
         ...this.base,
-        ...this[this.variant]
+        ...this[this.variant],
+        ...this[this.size]
       }
     }
   }
