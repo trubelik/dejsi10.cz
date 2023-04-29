@@ -13,7 +13,7 @@ export default {
       default: 'normal',
       validator (value) {
         // The value must match one of these strings
-        return ['normal', 'big', 'small'].includes(value)
+        return ['normal', 'big', 'small', 'xs'].includes(value)
       }
     }
   },
@@ -28,7 +28,10 @@ export default {
         'text-4xl': this.variant === 'big',
         'sm:text-5xl': this.variant === 'big',
         'text-xl': this.variant === 'small',
-        'sm:text-2xl': this.variant === 'small'
+        'sm:text-2xl': this.variant === 'small',
+        'text-md': this.variant === 'xs',
+        'sm:text-lg': this.variant === 'xs',
+        'font-semibold': this.variant === 'xs'
       }
     }
   }
