@@ -41,9 +41,22 @@
               <Heading variant="big" class="mb-8">
                 Dej si deset
               </Heading>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta magni excepturi optio error asperiores voluptatibus, beatae porro culpa, quis facilis cupiditate, quasi modi eveniet libero omnis quidem dolor autem fuga.
+              <p class="pb-6">
+                {{ heroPage.description }}
               </p>
+              <div>
+                <Button class="text-center mr-2" size="big" variant="primary" @click.native="showPoster = true">
+                  Táborový leták
+                </Button>
+                <Button
+                  class="text-center"
+                  :to="'/blog/' + heroPage.summerCamp.slug"
+                  variant="secondary"
+                  size="big"
+                >
+                  Aktuality
+                </Button>
+              </div>
             </div>
             <div class="hidden lg:block" />
           </div>
@@ -52,7 +65,7 @@
     </div>
     <Body>
       <div class="grid grid-cols-1 md:grid-cols-3 md:gap-10 justify-items-center">
-        <div class="col-span-1 bg-white rounded-2xl overflow-hidden self-start max-w-md order-2 md:order-1">
+        <div class="col-span-1 bg-white rounded-2xl overflow-hidden self-center max-w-md order-2 md:order-1 mx-5 md:mx-0">
           <div class="relative pb-5">
             <nuxt-img
               :src="heroPage.summerCamp.hero.url"
@@ -201,6 +214,14 @@ export default {
           format: 'webp'
         })
       ]
+    }
+  },
+  watch: {
+    showPoster (val) {
+      if (val) { this.showDiary = false }
+    },
+    showDiary (val) {
+      if (val) { this.showPoster = false }
     }
   }
 }
