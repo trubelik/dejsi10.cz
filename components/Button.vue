@@ -1,7 +1,10 @@
 <template>
-  <NuxtLink :to="to" :class="classes">
+  <NuxtLink v-if="to" :to="to" :class="classes">
     <slot />
   </NuxtLink>
+  <button v-else :class="classes">
+    <slot />
+  </button>
 </template>
 
 <script>
@@ -9,7 +12,7 @@ export default {
   name: 'NuxtButton',
   props: {
     to: {
-      required: true,
+      required: false,
       type: String
     },
     disabled: {
