@@ -155,7 +155,7 @@
           <blockquote class="instagram-media w-full cst-instagram-profile" data-instgrm-permalink="https://www.instagram.com/dejsi10.cz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
             <a href="https://www.instagram.com/dejsi10.cz/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" rel="noopener">View this profile on Instagram</a>
           </blockquote>
-          <script async src="https://www.instagram.com/embed.js" />
+          <script async defer src="https://platform.instagram.com/en_US/embeds.js" />
         </div>
       </div>
     </Body>
