@@ -128,7 +128,7 @@
         </div>
       </div>
       <div class="my-12 grid grid-cols-1 xl:grid-cols-3 xl:gap-10 justify-items-center items-start">
-        <div class="xl:col-span-2 order-1 w-full mb-8 lg:mb-0 px-5 md:px-0">
+        <div class="xl:col-span-2 order-1 w-full mb-8 xl:mb-0 px-5 md:px-0">
           <Heading variant="normal" class="mb-8">
             Okénko z tábora
           </Heading>
@@ -150,8 +150,11 @@
             <i>Zatím žádné zprávy z tábora</i>
           </div>
         </div>
-        <div class="xl:col-span-1 bg-white rounded-2xl overflow-hidden max-w-md w-full order-2 mx-5 xl:mx-0 p-4">
-          <iframe class="w-full aspect-[1/1.1] xl:aspect-[1/1.22]" src="//www.instagram.com/dejsi10.cz/embed/" />
+        <div class="xl:col-span-1 bg-white rounded-2xl overflow-hidden max-w-md order-2 mx-5 xl:mx-0 p-4">
+          <!-- <iframe class="w-full aspect-[1/1.1] xl:aspect-[1/1.22]" src="//www.instagram.com/dejsi10.cz/embed/" /> -->
+          <blockquote class="instagram-media w-full cst-instagram-profile" data-instgrm-permalink="https://www.instagram.com/dejsi10.cz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            <a href="https://www.instagram.com/dejsi10.cz/" target="_blank" rel="noopener">View this profile on Instagram</a>
+          </blockquote>
         </div>
       </div>
     </Body>
@@ -255,6 +258,9 @@ export default {
       if (val) { this.showPoster = false }
     }
   }
+  // mounted () {
+  //   if (window.instgrm) { window.instgrm.Embeds.process() }
+  // }
 }
 </script>
 
@@ -295,5 +301,10 @@ export default {
 
   .description-body b {
     @apply font-semibold;
+  }
+
+  .cst-instagram-profile {
+    min-width: auto !important;
+    margin-bottom: 0 !important;
   }
 </style>
