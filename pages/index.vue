@@ -151,7 +151,7 @@
           </div>
         </div>
         <div class="xl:col-span-1 bg-white rounded-2xl overflow-hidden max-w-md w-full order-2 mx-5 xl:mx-0 p-4">
-          <iframe class="w-full aspect-[1/1.1] xl:aspect-[1/1.22]" src="https://www.instagram.com/dejsi10.cz/embed/" />
+          <iframe class="w-full aspect-[1/1.1] xl:aspect-[1/1.22]" src="//www.instagram.com/dejsi10.cz/embed/" />
         </div>
       </div>
     </Body>
