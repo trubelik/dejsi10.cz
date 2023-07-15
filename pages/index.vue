@@ -34,7 +34,7 @@
       <div class="cst-place-first-col order-1 lg:order-none">
         <Body>
           <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-5">
-            <div class="px-5 py-8 lg:py-16">
+            <div class="pl-5 lg:pl-0 pr-5 py-8 lg:py-16">
               <Heading variant="small" class="mb-2">
                 Letní dětské tábory
               </Heading>
@@ -64,8 +64,8 @@
       </div>
     </div>
     <Body>
-      <div class="grid grid-cols-1 md:grid-cols-3 md:gap-10 justify-items-center">
-        <div class="col-span-1 bg-white rounded-2xl overflow-hidden self-center max-w-md order-2 md:order-1 mx-5 md:mx-0">
+      <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 justify-items-center">
+        <div class="col-span-1 bg-white rounded-2xl overflow-hidden self-center max-w-md order-2 lg:order-1 mx-5 lg:mx-0">
           <div class="relative pb-5">
             <nuxt-img
               :src="heroPage.summerCamp.hero.url"
@@ -91,7 +91,7 @@
               </NuxtLink>
             </Heading>
             <p class="pb-6">
-              <font-awesome-icon icon="calendar-week" class="mr-1 text-amber-500" />
+              <font-awesome-icon icon="calendar-week" class="mr-1 text-amber-600" />
               {{ dateInterval }}
             </p>
             <div class="grid grid-cols-1 xl:grid-cols-2 pb-4 gap-3 xl:gap-5">
@@ -109,7 +109,7 @@
             </div>
           </div>
         </div>
-        <div class="md:col-span-2 order-1 md:order-2">
+        <div class="lg:col-span-2 order-1 lg:order-2">
           <div class="px-5 md:px-0">
             <Heading variant="normal" class="mb-3 lg:mt-4">
               O spolku
@@ -118,13 +118,40 @@
               <p class="description-body mb-8" v-html="heroPage.about.html" />
             </ClientOnly>
           </div>
-          <div class="px-5 py-3 mx-5 md:mx-0 md:flex items-center gap-4 mb-8 m-auto border-l-2 border-amber-700">
+          <div class="px-5 py-3 mx-5 md:mx-0 md:flex items-center gap-4 mb-8 lg:mb-0 m-auto border-l-2 border-amber-600">
             <span class="pb-4 md:pb-0 block md:inline">{{ heroPage.summerCampDiary }}</span>
             <Button class="text-center whitespace-nowrap" variant="primary" @click.native="showDiary = true">
               <font-awesome-icon icon="book-open-reader" class="mr-1 text-amber-600" />
               Táborový deník
             </Button>
           </div>
+        </div>
+      </div>
+      <div class="my-12 grid grid-cols-1 xl:grid-cols-3 xl:gap-10 justify-items-center items-start">
+        <div class="xl:col-span-2 order-1 w-full mb-8 lg:mb-0 px-5 md:px-0">
+          <Heading variant="normal" class="mb-8">
+            Okénko z tábora
+          </Heading>
+          <div v-if="newsArticles.length > 0" class="relative">
+            <div class="absolute top-0 bottom-0 left-0 border-l-2 border-amber-600" />
+            <ol class="relative border-l border-transparent">
+              <li v-for="(item, index) in newsArticles" :key="'news_' + index" class="ml-4">
+                <div class="absolute w-2 h-2 bg-gray-200 rounded-full mt-2 -left-1 border-2 border-amber-600" />
+                <time class="mb-1 text-sm text-gray-500">
+                  {{ new Date(item.createdAt).toLocaleDateString('cs-CZ') }}
+                </time>
+                <p :class="{'mb-5': index !== (newsArticles.length - 1)}">
+                  {{ item.description }}
+                </p>
+              </li>
+            </ol>
+          </div>
+          <div v-else class="text-center text-gray-500">
+            <i>Zatím žádné zprávy z tábora</i>
+          </div>
+        </div>
+        <div class="xl:col-span-1 bg-white rounded-2xl overflow-hidden max-w-md w-full order-2 mx-5 xl:mx-0 p-4">
+          <iframe class="w-full aspect-[1/1.1] xl:aspect-[1/1.22]" src="https://www.instagram.com/dejsi10.cz/embed/" />
         </div>
       </div>
     </Body>
@@ -151,7 +178,7 @@ import { gql } from 'graphql-request'
 export default {
   name: 'IndexPage',
   async asyncData ({ $hygraph }) {
-    const { heroPages } = await $hygraph.request(
+    const { heroPages, newsArticles } = await $hygraph.request(
       gql`
         {
           heroPages(first: 1) {
@@ -177,10 +204,14 @@ export default {
               url
             }
           }
+          newsArticles(last: 20, orderBy: createdAt_DESC) {
+            description
+            createdAt
+          }
         }
       `
     )
-    return { heroPage: heroPages[0] }
+    return { heroPage: heroPages[0], newsArticles }
   },
   data () {
     return {
