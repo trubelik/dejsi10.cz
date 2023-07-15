@@ -216,7 +216,7 @@ export default {
               url
             }
           }
-          newsArticles(last: 20, orderBy: createdAt_DESC) {
+          newsArticles(first: 20, orderBy: createdAt_DESC) {
             description
             createdAt
           }
