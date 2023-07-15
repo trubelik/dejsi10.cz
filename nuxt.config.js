@@ -17,9 +17,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script: [
-      { src: "https://www.instagram.com/embed.js", body: true, async: true }
-    ]
+    // script: [
+    //   { src: "https://www.instagram.com/embed.js", body: true, async: true }
+    // ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
