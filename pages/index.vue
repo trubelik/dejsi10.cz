@@ -64,48 +64,50 @@
       </div>
     </div>
     <Body>
-      <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 justify-items-center">
-        <div class="col-span-1 bg-white rounded-2xl overflow-hidden self-center max-w-md order-2 lg:order-1 mx-5 lg:mx-0">
-          <div class="relative pb-5">
-            <nuxt-img
-              :src="heroPage.summerCamp.hero.url"
-              class="w-full"
-              sizes="sm:500px"
-              format="webp"
-              quality="100"
-            />
-            <div class="bg-gradient-to-t from-white to-transparent absolute bottom-0 h-full w-full mb-5" />
-            <Heading variant="small" class="mb-3 mr-5 ml-5 absolute bottom-0">
-              Pořádáme...
-            </Heading>
-            <Tag class="mb-2 absolute top-0 m-3 opacity-80">
-              <font-awesome-icon icon="pencil" class="mr-2" />
-              <b class="mr-2">Aktualizováno</b>
-              {{ dateUpdated }}
-            </Tag>
-          </div>
-          <div class="px-5">
-            <Heading variant="xs" class="mb-1">
-              <NuxtLink :to="'/blog/' + heroPage.summerCamp.slug">
-                {{ heroPage.summerCamp.title }}
-              </NuxtLink>
-            </Heading>
-            <p class="pb-6">
-              <font-awesome-icon icon="calendar-week" class="mr-1 text-amber-600" />
-              {{ dateInterval }}
-            </p>
-            <div class="grid grid-cols-1 xl:grid-cols-2 pb-4 gap-3 xl:gap-5">
-              <Button class="text-center" variant="primary" @click.native="showPoster = true">
-                Leták
-              </Button>
-              <Button
-                class="text-center"
-                :to="'/blog/' + heroPage.summerCamp.slug"
-                variant="secondary"
-              >
-                Číst více
-                <font-awesome-icon icon="chevron-right" class="ml-1" />
-              </Button>
+      <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 justify-items-center items-start">
+        <div class="col-span-1 max-w-md w-full order-2 lg:order-1">
+          <div class="bg-white rounded-2xl overflow-hidden mx-5 lg:mx-0">
+            <div class="relative pb-5">
+              <nuxt-img
+                :src="heroPage.summerCamp.hero.url"
+                class="w-full"
+                sizes="sm:500px"
+                format="webp"
+                quality="100"
+              />
+              <div class="bg-gradient-to-t from-white to-transparent absolute bottom-0 h-full w-full mb-5" />
+              <Heading variant="small" class="mb-3 mr-5 ml-5 absolute bottom-0">
+                Pořádáme...
+              </Heading>
+              <Tag class="mb-2 absolute top-0 m-3 opacity-80">
+                <font-awesome-icon icon="pencil" class="mr-2" />
+                <b class="mr-2">Aktualizováno</b>
+                {{ dateUpdated }}
+              </Tag>
+            </div>
+            <div class="px-5">
+              <Heading variant="xs" class="mb-1">
+                <NuxtLink :to="'/blog/' + heroPage.summerCamp.slug">
+                  {{ heroPage.summerCamp.title }}
+                </NuxtLink>
+              </Heading>
+              <p class="pb-6">
+                <font-awesome-icon icon="calendar-week" class="mr-1 text-amber-600" />
+                {{ dateInterval }}
+              </p>
+              <div class="grid grid-cols-1 xl:grid-cols-2 pb-4 gap-3 xl:gap-5">
+                <Button class="text-center" variant="primary" @click.native="showPoster = true">
+                  Leták
+                </Button>
+                <Button
+                  class="text-center"
+                  :to="'/blog/' + heroPage.summerCamp.slug"
+                  variant="secondary"
+                >
+                  Číst více
+                  <font-awesome-icon icon="chevron-right" class="ml-1" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -138,9 +140,9 @@
               <li v-for="(item, index) in newsArticles" :key="'news_' + index" class="ml-4">
                 <div class="absolute w-2 h-2 bg-gray-200 rounded-full mt-2 -left-1 border-2 border-amber-600" />
                 <time class="mb-1 text-sm text-gray-500">
-                  {{ new Date(item.createdAt).toLocaleDateString('cs-CZ') }}
+                  {{ new Date(item.createdAt).toLocaleDateString('cs-CZ') }}, {{ new Date(item.createdAt).toLocaleTimeString('cs-CZ', {timeStyle: 'short'}) }}
                 </time>
-                <p :class="{'mb-5': index !== (newsArticles.length - 1)}">
+                <p :class="{'mb-3 pb-3 border-b border-gray-300': index !== (newsArticles.length - 1)}">
                   {{ item.description }}
                 </p>
               </li>
@@ -150,12 +152,18 @@
             <i>Zatím žádné zprávy z tábora</i>
           </div>
         </div>
-        <div class="xl:col-span-1 bg-white rounded-2xl overflow-hidden max-w-md order-2 mx-5 xl:mx-0 p-4">
-          <!-- <iframe class="w-full aspect-[1/1.1] xl:aspect-[1/1.22]" src="//www.instagram.com/dejsi10.cz/embed/" /> -->
-          <blockquote class="instagram-media w-full cst-instagram-profile" data-instgrm-permalink="https://www.instagram.com/dejsi10.cz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-            <a href="https://www.instagram.com/dejsi10.cz/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" rel="noopener">View this profile on Instagram</a>
-          </blockquote>
-          <script async defer src="https://platform.instagram.com/en_US/embeds.js" />
+        <div class="col-span-1 max-w-md w-full order-2">
+          <div class="bg-white rounded-2xl overflow-hidden mx-5 xl:mx-0 p-5 text-center">
+            <div class="grid grid-cols-1 grid-rows-1 h-36 w-56 mx-auto mb-4">
+              <img src="/main01.jpg" class="rounded-2xl shadow-xl cst-place-first-col-img w-32 rotate-3 self-end justify-self-end">
+              <img src="/main02.jpg" class="rounded-2xl cst-place-first-col-img w-40 -rotate-2 cst-white-shadow">
+            </div>
+            <div class="flex justify-center items-center mb-2">
+              <font-awesome-icon :icon="['fab', 'instagram']" class="text-4xl text-gray-800" />
+              <span class="font-semibold ml-2 text-sm">@dejsi10.cz</span>
+            </div>
+            <a href="https://www.instagram.com/dejsi10.cz/" target="_blank" class="ml-2 text-sky-600 font-semibold">Sledujte nás na Instagramu</a>
+          </div>
         </div>
       </div>
     </Body>
@@ -259,22 +267,17 @@ export default {
       if (val) { this.showPoster = false }
     }
   }
-  // mounted () {
-  //   if (window.instgrm) { window.instgrm.Embeds.process() }
-  // }
 }
 </script>
 
 <style>
   @media only screen and (min-width: 1024px) {
     .cst-place-first-col {
-      @apply justify-self-stretch;
       grid-area: 1 / 1 / 1 / 1;
     }
   }
 
   .cst-place-first-col-img {
-    @apply justify-self-stretch;
     grid-area: 1 / 1 / 1 / 1;
   }
 
