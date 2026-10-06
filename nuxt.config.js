@@ -51,12 +51,14 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // graphql >=16.13 ships class fields that webpack 4 cannot parse
+    transpile: ['graphql'],
     postcss: {
       plugins: {
         tailwindcss: {},
-        autoprefixer: {},
-      },
-    },
+        autoprefixer: {}
+      }
+    }
   },
 
   // Fontawesome
@@ -72,11 +74,11 @@ export default {
         'faDownload',
         'faBars',
         'faQuoteLeft',
-        'faBookOpenReader',
+        'faBookOpenReader'
       ],
       brands: [
-        'faInstagram',
-      ],
+        'faInstagram'
+      ]
     }
   },
 
