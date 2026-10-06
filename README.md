@@ -2,6 +2,8 @@
 
 ## Build Setup
 
+Requires Node.js 18–24 (24.x LTS recommended, see `.nvmrc`). With nvm: `nvm use`.
+
 ```bash
 # install dependencies
 $ npm install
